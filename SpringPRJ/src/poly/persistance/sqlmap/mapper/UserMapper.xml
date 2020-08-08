@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IUserMapper">
+
+	<!-- 유저 가져오기 쿼리 -->
+	<select id="getUserInfo" resultType="UserDTO" parameterType="UserDTO">
+	SELECT 
+		USER_ID,
+		USER_PWD,
+		USER_EMAIL
+	FROM 
+		USERINFO
+	WHERE 
+		USER_ID = #{user_id} AND USER_PWD = #{user_pwd}
+	</select>
+	
+	<insert id="UserSignUp" parameterType="UserDTO" >
+	INSERT INTO 
+		USERINFO(
+		USER_NO,
+		USER_ID,
+		USER_PWD,
+		USER_EMAIL,
+		USER_AGE,
+		USER_GENDER,
+		USER_INTEREST
+		)VALUES(
+		USER_SEQ.NEXTVAL,
+		#{user_id},
+		#{user_pwd},
+		#{user_email},
+		#{user_age},
+		#{user_gender},
+		#{user_interest}
+		)
+	</insert>
+	
+	<select id="idCheck" resultType="UserDTO" parameterType="UserDTO" >
+	SELECT
+		USER_ID
+	FROM
+		USERINFO
+	WHERE
+		USER_ID = #{user_id}
+	</select>
+	
+	<select id="emailCheck" resultType="UserDTO" parameterType="UserDTO" >
+	SELECT
+		USER_EMAIL
+	FROM
+		USERINFO
+	WHERE
+		USER_EMAIL = #{user_email}
+	</select>
+</mapper>

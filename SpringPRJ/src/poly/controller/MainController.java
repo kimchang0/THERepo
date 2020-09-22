@@ -18,6 +18,7 @@ import poly.dto.UserDTO;
 import poly.service.IMailService;
 import poly.service.IUserService;
 import poly.util.CmmUtil;
+import poly.util.EncryptUtil;
 
 @Controller
 public class MainController {
@@ -52,11 +53,13 @@ public class MainController {
 
 		log.info("id :" + id);
 		log.info("pwd :" + pwd);
+		
+		String HashEnc = EncryptUtil.enHashSHA256(pwd);
 
 		UserDTO tDTO = new UserDTO();
 
 		tDTO.setUser_id(id);
-		tDTO.setUser_pwd(pwd);
+		tDTO.setUser_pwd(HashEnc);
 
 		tDTO = userService.getUserInfo(tDTO);
 		log.info("uDTO null? : " + (tDTO == null));
@@ -133,14 +136,14 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "The/TheSignUpProc", method = RequestMethod.POST)
-	public String TheSignUpProc(HttpServletRequest request, ModelMap model, HttpSession session) {
+	public String TheSignUpProc(HttpServletRequest request, ModelMap model, HttpSession session) throws Exception {
 
 		log.info("/The/TheSignUpProc 시작");
 		
 		log.info("request.getParameter 시작");
 		
 		String user_id = request.getParameter("id");
-		String user_pwd = request.getParameter("pwd");
+		String user_pwd = nvl(request.getParameter("pwd"));
 		String user_gender = request.getParameter("gender");
 		String user_age = request.getParameter("age");
 		String[] user_interest = request.getParameterValues("interest");
@@ -156,12 +159,12 @@ public class MainController {
 		String interests = String.join(",", user_interest);
 		log.info("interest : " + interests);
 		
-		
+		String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
 		
 		UserDTO tDTO = new UserDTO();
 		log.info("tDTO.set 시작");
 		tDTO.setUser_id(user_id);
-		tDTO.setUser_pwd(user_pwd);
+		tDTO.setUser_pwd(HashEnc);
 		tDTO.setUser_gender(user_gender);
 		tDTO.setUser_age(user_age);
 		tDTO.setUser_interest(interests);
@@ -371,7 +374,7 @@ public class MainController {
 	 	
 	 	@ResponseBody
 	 	@RequestMapping(value = "/Setting/TheMypageCheckProc", method = RequestMethod.POST)
-		public int TheMypageCheckProc(HttpServletRequest request, HttpSession session) {
+		public int TheMypageCheckProc(HttpServletRequest request, HttpSession session) throws Exception {
 
 			log.info("/The/TheMypageCheckProc 시작");
 			int result = 0;
@@ -382,9 +385,11 @@ public class MainController {
 			log.info("user_pwd : " + user_pwd);
 			log.info("user_id : " + user_id);
 			
+			String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
+			
 			UserDTO uDTO = new UserDTO();
 			log.info("uDTO.set 시작");
-			uDTO.setUser_pwd(user_pwd);
+			uDTO.setUser_pwd(HashEnc);
 			uDTO.setUser_id(user_id);
 			log.info("uDTO.set 종료");
 			
@@ -628,7 +633,7 @@ public class MainController {
 	 	
 	 	@ResponseBody
 	 	@RequestMapping(value = "/Mypage/passWordCheck", method = RequestMethod.POST)
-		public int passWordCheck(HttpServletRequest request, HttpSession session) {
+		public int passWordCheck(HttpServletRequest request, HttpSession session) throws Exception {
 
 			log.info("/The/passWordCheck 시작");
 			int result = 0;
@@ -639,9 +644,11 @@ public class MainController {
 			log.info("user_pwd : " + user_pwd);
 			log.info("user_id : " + user_id);
 			
+			String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
+			
 			UserDTO uDTO = new UserDTO();
 			log.info("uDTO.set 시작");
-			uDTO.setUser_pwd(user_pwd);
+			uDTO.setUser_pwd(HashEnc);
 			uDTO.setUser_id(user_id);
 			log.info("uDTO.set 종료");
 			
@@ -663,7 +670,7 @@ public class MainController {
 		}
 	 	
 	 	@RequestMapping(value = "/Mypage/passWordChangeProc")
-		public String passWordChangeProc(HttpSession session, HttpServletRequest request, Model model) {
+		public String passWordChangeProc(HttpSession session, HttpServletRequest request, Model model) throws Exception {
 
 			log.info("/Mypage/passWordChangeProc 시작");
 			
@@ -671,11 +678,13 @@ public class MainController {
 			String user_pwd = request.getParameter("pwd");
 			log.info("user_id :" + user_id);
 			log.info("user_pwd :" + user_pwd);
+			
+			String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
 
 			UserDTO uDTO = new UserDTO();
 			log.info("uDTO.set 시작");
 			uDTO.setUser_id(user_id);
-			uDTO.setUser_pwd(user_pwd);
+			uDTO.setUser_pwd(HashEnc);
 			log.info("uDTO.set 종료");
 			
 			int res = userService.pwdChange(uDTO);

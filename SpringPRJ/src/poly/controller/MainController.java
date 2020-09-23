@@ -252,7 +252,7 @@ public class MainController {
 	    		
 	    	}
 	    	return buffer.toString();
-	    }
+	 }
 	 	
 	 	@RequestMapping(value = "/The/TheEmailCertify")
 		public String EmailCertify() {

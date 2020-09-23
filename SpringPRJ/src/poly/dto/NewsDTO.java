@@ -12,6 +12,15 @@ public class NewsDTO {
 	private String news_editor;
 	private String news_checkTime;
 	private String news_seq;
+	private String news_no;
+
+	public String getNews_no() {
+		return news_no;
+	}
+
+	public void setNews_no(String news_no) {
+		this.news_no = news_no;
+	}
 
 	public String getNews_title() {
 		return news_title;

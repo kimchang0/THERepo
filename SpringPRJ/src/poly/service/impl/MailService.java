@@ -23,8 +23,8 @@ public class MailService implements IMailService{
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	final String host = "smtp.naver.com";
-	final String user = "@naver.com"; //보내는 사람 주소
-	final String password = ""; //네이버 로그인을 위한 비밀번호
+	final String user = "shfkfk4545@naver.com"; //보내는 사람 주소
+	final String password = "zxc0037zxc@"; //네이버 로그인을 위한 비밀번호
 	
 	@Override
 	public int doSendMail(UserDTO uDTO) {

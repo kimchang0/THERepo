@@ -227,7 +227,7 @@ public class MainController {
 	public int emailCheck(HttpServletRequest request) throws Exception{
 		log.info("emailCheck 시작");
 		
-		String userEmail = request.getParameter("userEmail");
+		String userEmail = EncryptUtil.encAES128CBC(request.getParameter("userEmail"));
 		log.info("TheService.emailCheck 시작");
         UserDTO emailCheck = userService.emailCheck(userEmail);
         log.info("TheService.emailCheck 종료");
@@ -270,8 +270,8 @@ public class MainController {
 			log.info("/The/TheEmailCertify 시작");
 	        
 	    	int result = 0;
-	    	String email = request.getParameter("email");
-	    	log.info("email : " + email);
+	    	String email = EncryptUtil.encAES128CBC(request.getParameter("email"));
+	    	log.info("email : " + EncryptUtil.decAES128CBC(email));
 	    	String authNum = "";
 	    	
 	    	authNum = RandomNum();

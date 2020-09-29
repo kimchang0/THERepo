@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -38,8 +39,9 @@ public class MainController {
 	}
 
 	@RequestMapping(name = "The/TheLogin")
-	public String TheLogin() {
+	public String TheLogin(HttpSession session) {
 		log.info("TheLogin 시작");
+		session.invalidate();
 		log.info("TheLogin 종료");
 		return "/The/TheLogin";
 	}
@@ -753,9 +755,61 @@ public class MainController {
 			return "/redirect";
 		}
 	 	
+		@RequestMapping(name = "The/findId")
+		public String findId() {
+			log.info("findId 시작");
+			
+			log.info("findId 종료");
+			return "/The/findId";
+		}
 	 	
+		@RequestMapping(name = "The/findIdProc")
+		public String FindIdProc(HttpServletRequest request, Model model, HttpSession session) {
+			log.info("FindIdProc 시작");
+
+			
+			String user_email = CmmUtil.nvl(request.getParameter("user_email"));
+			log.info(user_email);
+			
+			UserDTO uDTO = new UserDTO();
+			
+			log.info("set 시작");
+			uDTO.setUser_email(user_email);
+			log.info("set 종료");
+			
+			UserDTO rDTO = new UserDTO();
+			log.info("userService.findId 시작");
+			rDTO = userService.findId(uDTO);
+			log.info("userService.findId 시작");
+			
+			String msg;
+			String url;
+			
+			log.info("session.setAtrribute && if 시작");
+			if(rDTO.getUser_id() == null) {
+				msg = "존재하지 않는 이메일입니다!";
+				url = "The/findId.do";
+			} else {
+				msg = "아이디 찾기를 성공했습니다!";
+				url = "findIdResult.do";
+				session.setAttribute("user_id", rDTO.getUser_id());
+			}
+			log.info("session.setAtrribute && if 종료");
+
+			model.addAttribute("msg", msg);
+			model.addAttribute("url", url);
+			
+			log.info("FindIdProc 종료");
+			return "/redirect";
+		}
 	 	
-	 	
+		@RequestMapping(name = "The/findIdResult")
+		public String FindIdResult() {
+			log.info("FindIdResult 시작");
+			
+			log.info("FindIdResult 종료");
+			return "/The/findIdResult";
+		}
 	 	
 	 	
 	 	

@@ -755,15 +755,16 @@ public class MainController {
 			return "/redirect";
 		}
 	 	
-		@RequestMapping(name = "The/findId")
+	 	
+		@RequestMapping(value = "The/findId")
 		public String findId() {
-			log.info("findId 시작");
+			log.info("findId 시작"); 
 			
 			log.info("findId 종료");
 			return "/The/findId";
 		}
 	 	
-		@RequestMapping(name = "The/findIdProc")
+		@RequestMapping(value = "The/findIdProc", method = RequestMethod.POST)
 		public String FindIdProc(HttpServletRequest request, Model model, HttpSession session) {
 			log.info("FindIdProc 시작");
 
@@ -786,9 +787,9 @@ public class MainController {
 			String url;
 			
 			log.info("session.setAtrribute && if 시작");
-			if(rDTO.getUser_id() == null) {
+			if(rDTO == null) {
 				msg = "존재하지 않는 이메일입니다!";
-				url = "The/findId.do";
+				url = "/The/findId.do";
 			} else {
 				msg = "아이디 찾기를 성공했습니다!";
 				url = "findIdResult.do";
@@ -803,7 +804,7 @@ public class MainController {
 			return "/redirect";
 		}
 	 	
-		@RequestMapping(name = "The/findIdResult")
+		@RequestMapping(value = "The/findIdResult")
 		public String FindIdResult() {
 			log.info("FindIdResult 시작");
 			

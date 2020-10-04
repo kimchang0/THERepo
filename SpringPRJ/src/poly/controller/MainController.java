@@ -812,6 +812,4 @@ public class MainController {
 			return "/The/findIdResult";
 		}
 	 	
-	 	
-	 	
 }

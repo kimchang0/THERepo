@@ -51,17 +51,15 @@ public class MainController {
 
 		log.info("/The/TheLoginProc 시작");
 		String id = nvl(request.getParameter("id"));
-		String pwd = nvl(request.getParameter("pwd"));
+		String pwd = nvl(EncryptUtil.enHashSHA256(request.getParameter("pwd")));
 
 		log.info("id :" + id);
-		log.info("pwd :" + pwd);
-		
-		String HashEnc = EncryptUtil.enHashSHA256(pwd);
+		log.info("pwd :" + EncryptUtil.enHashSHA256(pwd));
 
 		UserDTO tDTO = new UserDTO();
 
 		tDTO.setUser_id(id);
-		tDTO.setUser_pwd(HashEnc);
+		tDTO.setUser_pwd(pwd);
 
 		tDTO = userService.getUserInfo(tDTO);
 		log.info("uDTO null? : " + (tDTO == null));
@@ -76,6 +74,13 @@ public class MainController {
 			msg = "로그인 성공";
 			session.setAttribute("user_id", tDTO.getUser_id());
 			session.setAttribute("user_email", tDTO.getUser_email());
+			
+			int res = MailService.loginCheck(tDTO);
+			if(res == 1) {
+				log.info("로그인 확인메일 발송 성공");
+			} else {
+				log.info("로그인 메일확인 발송 실패");
+			}
 		}
 
 		url = "/index.do";
@@ -215,8 +220,9 @@ public class MainController {
         int result=0;
         
         log.info("if 시작");
-        if(idCheck!=null) result=1;
-        
+        if(idCheck!=null) { 
+        	result=1;
+        }
         log.info("result : " + result);
         log.info("if 종료");
         

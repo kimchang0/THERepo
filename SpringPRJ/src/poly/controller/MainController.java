@@ -748,7 +748,7 @@ public class MainController {
 			if (res > 0) {
 				msg = "관심분야 수정에 성공했습니다.";
 			} else {
-				msg = "관심분야 수정에 실패했습니다. 고객센터에 문의해주세요.";
+				msg = "시스템 오류로 관심분야 수정에 실패했습니다. 고객센터에 문의해주세요.";
 			}
 
 			log.info("model.addAttribute 시작");

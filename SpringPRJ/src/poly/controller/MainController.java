@@ -492,7 +492,7 @@ public class MainController {
 			UserDTO res = userService.getUserCorrection(uDTO);
 			
 			if(res == null) {
-				model.addAttribute("msg", "회원 정보가 없습니다. 자세한 내용은 고객센터에 문의해주세요.");
+				model.addAttribute("msg", "회원 정보가 없습니다. 자세한 사항은 고객센터에 문의해주세요.");
 				model.addAttribute("url", "/Setting/TheMypage.do");
 				return "/redirect";
 			}

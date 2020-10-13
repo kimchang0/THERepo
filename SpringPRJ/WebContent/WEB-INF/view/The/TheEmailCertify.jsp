@@ -38,7 +38,7 @@ $("#userEmail").keyup(function() {
 			success : function(data) {
 			
 				if (data == 1) {
-					$(".msg2").text("이미 사용하고 있는 이메일입니다.");
+					$(".msg2").text("이미 사용하고 있는 이메일입니다.이메일을 확인해주세요.");
 					$(".msg2").attr("style", "color:#f00");
 				} else {
 					$(".msg2").text("사용 가능한 이메일입니다. 인증하기를 눌러 이메일 인증을 진행해주세요.");

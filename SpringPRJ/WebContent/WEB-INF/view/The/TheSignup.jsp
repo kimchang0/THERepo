@@ -63,7 +63,7 @@
 			data : query,
 			success : function(data) {
 				if (data == 1) {
-					$(".msg").text("이미 사용하고 있는 아이디입니다.");
+					$(".msg").text("이미 사용하고 있는 아이디입니다. 아이디를 확인해주세요.");
 					$(".msg").attr("style", "color:#f00");
 					doCheck = 'N'
 				} else {

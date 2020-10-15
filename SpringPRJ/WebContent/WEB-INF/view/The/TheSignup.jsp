@@ -67,7 +67,7 @@
 					$(".msg").attr("style", "color:#f00");
 					doCheck = 'N'
 				} else {
-					$(".msg").text("사용 가능한 아이디입니다.");
+					$(".msg").text("사용 가능한 아이디입니다. 회원가입을 계속 진행해주세요.");
 					$(".msg").attr("style", "color:#00f");
 					//$('#userId').attr("disabled", true);
 					doCheck = 'Y'

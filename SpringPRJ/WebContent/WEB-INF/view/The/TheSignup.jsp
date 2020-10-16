@@ -77,7 +77,7 @@
 	});
 	function check() {
 		if (doCheck == 'N') {
-			alert("사용중인 아이디입니다.")
+			alert("사용중인 아이디입니다. 아이디를 확인해주세요.")
 			return false;
 		}
 	}

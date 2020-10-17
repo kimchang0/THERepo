@@ -21,7 +21,7 @@
 	
 	<form action="/Mypage/interestSettingProc.do">
 	
-		<input type="checkbox" name="checkAll" id="checkAll" onclick="checkAll();"><label for="checkAll">전체 선택</label> <br><hr> 
+		<input type="checkbox" name="checkAll" id="checkAll" ><label for="checkAll">전체 선택</label> <br><hr> 
 		<input type="checkbox" name="interest" id="interest1" value="toeic" <%=CmmUtil.checked(interest, "toeic") %>><label for="interest1">토익</label> <br>
 		<input type="checkbox" name="interest" id="interest2" value="academic" <%=CmmUtil.checked(interest, "academic") %>><label for="interest2">학술/논문</label> <br>
 		<input type="checkbox" name="interest" id="interest3" value="business" <%=CmmUtil.checked(interest, "business") %>><label for="interest3">비즈니스</label> <br>
@@ -41,5 +41,6 @@ $(function(){ //전체선택 체크박스 클릭
 		} 
 	}) 
 })
+
 </script>
 </html>

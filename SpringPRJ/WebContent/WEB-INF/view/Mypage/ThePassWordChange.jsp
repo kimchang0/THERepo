@@ -60,11 +60,11 @@ $("#current_Password").keyup(function() {
 		success : function(data) {
 		
 			if (data == 1) {
-				$("#past").text("비밀번호가 일치합니다.");
+				$("#past").text("현재 비밀번호가 일치합니다.");
 				$("#past").attr("style", "color:#00f");
 				pastPwd = 'Y';
 			} else if(data == 0) {
-				$("#past").text("비밀번호가 다릅니다. 비밀번호를 확인해주세요.");
+				$("#past").text("현재 비밀번호와 다릅니다. 비밀번호를 확인해주세요.");
 				$("#past").attr("style", "color:#f00");
 				pastPwd = 'N';
 			}
@@ -83,7 +83,7 @@ $('#newPassWord').keyup(function() {
 			$(".new").css("color", "#00f");
 			newPwd = 'Y';
 		} else {
-			$(".new").text("비밀번호가 다릅니다. 비밀번호를 확인해주세요.");
+			$(".new").text("비밀번호가 일치하지 않습니다. 비밀번호를 확인해주세요.");
 			$(".new").css("color", "#f00");
 			newPwd = 'N';
 		}
@@ -102,7 +102,7 @@ $('#passWordCheck').keyup(function() {
 				$(".new").css("color", "#00f");
 				newPwd = 'Y';
 			} else {
-				$(".new").text("비밀번호가 다릅니다. 비밀번호를 확인해주세요.");
+				$(".new").text("비밀번호가 일치하지 않습니다. 비밀번호를 확인해주세요.");
 				$(".new").css("color", "#f00");
 				newPwd = 'N';
 			}

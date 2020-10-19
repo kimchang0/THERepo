@@ -21,13 +21,11 @@
 	Gender: <span id="gender"><%=nvl(res.getUser_gender()) %></span> <br>
 	Age: <span><%=nvl(res.getUser_age()) %>대</span>
 	<form action="/Mypage/TheUserCorrectionDo.do">
-		<button type="submit">수정하기</button> <button type="button" onclick="location.href='/Setting/TheMypage.do'">취소</button>
+		<button type="submit">수정하기</button> <button type="button" onclick="location.href='/Setting/TheMypage.do'">뒤로</button>
 	</form>
 </body>
 
 <script>
-
-
 const gender = $("#gender").text();
 	switch(gender){
 	case 'm':

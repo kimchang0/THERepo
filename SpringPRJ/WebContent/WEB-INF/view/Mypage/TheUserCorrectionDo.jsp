@@ -1,4 +1,4 @@
-<%@page import="poly.util.CmmUtil"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="poly.dto.UserDTO" %>
@@ -8,7 +8,7 @@
 	UserDTO res = (UserDTO)request.getAttribute("res");
  
 %>
-
+<%@page import="poly.util.CmmUtil"%>
 <!DOCTYPE html>
 <html>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>

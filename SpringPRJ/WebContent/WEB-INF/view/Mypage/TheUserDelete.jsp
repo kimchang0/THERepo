@@ -14,7 +14,7 @@
 		<input type="text" id="deleteCheck" placeholder="탈퇴를 확인합니다."> <br>
 		<span id="msg">회원탈퇴를 하면 다시 되돌릴 수 없으며, 모든 정보가 삭제됩니다.<br> 탈퇴를 계속 진행하시려면 '탈퇴를 확인합니다.'를 입력해주세요.</span> <br>
 		<button type="submit">확인</button> <br>
-		<button type="button" onclick="location.href='/Setting/TheMypage.do'" >취소</button> <br>
+		<button type="button" onclick="location.href='/Setting/TheMypage.do'" >뒤로</button> <br>
 	</form>
 
 </body>

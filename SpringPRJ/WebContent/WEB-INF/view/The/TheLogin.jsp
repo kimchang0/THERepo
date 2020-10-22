@@ -53,7 +53,7 @@ text-align: center;
 					<span class="txt1"> Please login to your account. </span>
 					 	<br>
 						<span class="txt1"> Forgot </span>
-						<a href="#" class="txt2 hov1"> ID & Password? </a><hr>
+						<a href="/The/findId.do" class="txt2 hov1"> ID & Password? </a><hr>
 					
 
 					<div class="wrap-input100 validate-input" data-validate="ID is required">

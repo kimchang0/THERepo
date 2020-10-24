@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>기본페이지</title>
 </head>
 <body>
-
+기본페이지
 </body>
 </html>

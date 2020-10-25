@@ -68,7 +68,6 @@ text-align: center;
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
-				장
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn" type="submit" style="height: 50px">Sign in</button>
 					</div><br>

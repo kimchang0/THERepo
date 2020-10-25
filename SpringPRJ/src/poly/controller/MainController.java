@@ -481,7 +481,7 @@ public class MainController {
 	 	@RequestMapping(value = "/Mypage/TheUserCorrection")
 		public String TheUserCorrection(HttpSession session, Model model) {
 
-			log.info("/Mypage/TheUserCorrection 시작");
+	 		log.info("/Mypage/TheUserCorrection 시작");
 			
 			String user_id = (String) session.getAttribute("user_id");
 			

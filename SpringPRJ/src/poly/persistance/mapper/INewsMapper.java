@@ -7,5 +7,7 @@ import poly.dto.NewsDTO;
 public interface INewsMapper {
 
 	int InsertNewsInfo(NewsDTO nDTO)throws Exception;
+
+	NewsDTO getNewsInfoFromDB(NewsDTO nDTO);
 	
 }

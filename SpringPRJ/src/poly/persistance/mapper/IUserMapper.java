@@ -30,4 +30,6 @@ public interface IUserMapper {
 
 	int updateInterest(UserDTO uDTO);
 
+	UserDTO findId(UserDTO uDTO);
+
 }

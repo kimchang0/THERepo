@@ -6,4 +6,6 @@ public interface IMailService {
 
 	int doSendMail(UserDTO uDTO);
 
+	int loginCheck(UserDTO tDTO);
+
 }

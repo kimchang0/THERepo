@@ -18,18 +18,14 @@
 	<insert id="UserSignUp" parameterType="UserDTO" >
 	INSERT INTO 
 		USERINFO(
-		USER_NO,
 		USER_ID,
 		USER_PWD,
-		USER_EMAIL,
 		USER_AGE,
 		USER_GENDER,
 		USER_INTEREST
 		)VALUES(
-		USER_SEQ.NEXTVAL,
 		#{user_id},
 		#{user_pwd},
-		#{user_email},
 		#{user_age},
 		#{user_gender},
 		#{user_interest}
@@ -53,4 +49,82 @@
 	WHERE
 		USER_EMAIL = #{user_email}
 	</select>
+	
+	<update id="insertAuthNum" parameterType="UserDTO">
+	UPDATE USERINFO
+	SET 
+		USER_AUTHNUM = #{user_authNum},
+		USER_EMAIL=#{user_email}
+	WHERE
+		USER_ID=#{user_id}
+	</update>
+	
+	<select id="authNumCheck" parameterType="UserDTO" resultType="UserDTO">
+	SELECT
+		USER_AUTHNUM
+	FROM
+		USERINFO
+	WHERE
+		USER_AUTHNUM = #{user_authNum}
+	</select>
+	
+	<select id="Userinquire" resultType="UserDTO" parameterType="UserDTO">
+	SELECT
+		USER_ID,
+		USER_PWD
+	FROM
+		USERINFO
+	WHERE
+		USER_PWD = #{user_pwd} and USER_ID = #{user_id}
+	</select>
+	
+	<delete id="deleteUser" parameterType="UserDTO">
+	DELETE FROM 
+			USERINFO
+	WHERE
+		USER_ID = #{user_id}
+	</delete>
+	
+	<select id="getUserCorrection" resultType="UserDTO" parameterType="UserDTO">
+	SELECT
+		USER_EMAIL,
+		USER_GENDER,
+		USER_AGE,
+		USER_INTEREST
+	FROM
+		USERINFO
+	WHERE
+		USER_ID = #{user_id}
+	</select>
+	<update id="setUserCorrection" parameterType="UserDTO" >
+		UPDATE USERINFO
+	SET 
+		USER_GENDER = #{user_gender},
+		USER_AGE=#{user_age}
+	WHERE
+		USER_ID=#{user_id}
+	</update>
+	<update id="pwdChange" parameterType="UserDTO">
+	UPDATE USERINFO
+	SET 
+		USER_PWD = #{user_pwd}
+	WHERE
+		USER_ID = #{user_id}
+	</update>
+	<update id="updateInterest" parameterType="UserDTO">
+		UPDATE USERINFO
+	SET 
+		USER_INTEREST = #{user_interest}
+	WHERE
+		USER_ID = #{user_id}
+	</update>
+	<select id="findId" parameterType="UserDTO" resultType="UserDTO">
+	SELECT
+		USER_ID
+	FROM
+		USERINFO
+	WHERE
+		USER_EMAIL = #{user_email}
+	</select>
+	
 </mapper>

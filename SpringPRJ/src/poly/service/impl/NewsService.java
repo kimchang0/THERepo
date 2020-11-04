@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,6 @@ public class NewsService implements INewsService {
 
 		int res = 0; // 크롤링 결과 (0보다 크면 크롤링 성공)
 
-		// 코리아헤럴드 사이트 (https:// 는 보안때문에 불가)
 		String url = "http://en.yna.co.kr";
 
 		// JSOUP 라이브러리를 통해 사이트에 접속되면, 그 사이트 전체의 HTML 소스를 저장할 변수
@@ -93,6 +91,12 @@ public class NewsService implements INewsService {
 		log.info(this.getClass().getName() + ".getNewsInfoFromWEB end!");
 
 		return res;
+	}
+
+	@Override
+	public NewsDTO getNewsInfoFromDB(NewsDTO nDTO) {
+	
+		return newsMapper.getNewsInfoFromDB(nDTO);
 	}
 }
 

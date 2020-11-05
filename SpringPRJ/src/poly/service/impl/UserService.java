@@ -84,6 +84,12 @@ public class UserService implements IUserService{
 		return userMapper.updateInterest(uDTO);
 	}
 
+	@Override
+	public UserDTO findId(UserDTO uDTO) {
+
+		return userMapper.findId(uDTO);
+	}
+
 
 
 }

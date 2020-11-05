@@ -3,18 +3,13 @@ package poly.util;
 import java.util.Iterator;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
-
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 public class NLPUtil {
 	
-	private  Logger log = Logger.getLogger(this.getClass());
-	
 	public static Iterator<CoreSentence> sentence(String str) {
-		System.out.println("sentence start");
 		
 		Properties props = new Properties();
 		
@@ -30,7 +25,6 @@ public class NLPUtil {
 		
 		Iterator<CoreSentence> it = doc.sentences().iterator();
 		
-		System.out.println("sentence end");
 		return it;
 	}
 
@@ -51,20 +45,20 @@ public class NLPUtil {
 		Iterator<CoreSentence> it = doc.sentences().iterator();
 		
 		
-//		while(it.hasNext()) {
-//			
-//			CoreSentence sent = it.next();
-//			
-//			System.out.println(sent.text());
-//			
-//			System.out.println(sent.tokens().get(0).originalText());
-//			
-//			System.out.println(sent.tokens().get(0).index());
-//			
-//			System.out.println(sent.lemmas());
-//			
-//			
-//		}
+		while(it.hasNext()) {
+			
+			CoreSentence sent = it.next();
+			
+			System.out.println(sent.text());
+			
+			System.out.println(sent.tokens().get(0).originalText());
+			
+			System.out.println(sent.tokens().get(0).index());
+			
+			System.out.println(sent.lemmas());
+			
+			
+		}
 		
 		
 		

@@ -794,7 +794,7 @@ public class MainController {
 			
 			log.info("session.setAtrribute && if 시작");
 			if(rDTO == null) {
-				msg = "존재하지 않는 이메일입니다!";
+				msg = "존재하지 않는 이메일입니다! 이메일을 확인해주세요.";
 				url = "/The/findId.do";
 			} else {
 				msg = "아이디 찾기를 성공했습니다!";

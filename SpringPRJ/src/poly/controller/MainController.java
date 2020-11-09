@@ -797,7 +797,7 @@ public class MainController {
 				msg = "존재하지 않는 이메일입니다! 이메일을 확인해주세요.";
 				url = "/The/findId.do";
 			} else {
-				msg = "아이디 찾기를 성공했습니다!";
+				msg = "아이디 찾기를 성공했습니다! 확인을 눌러 비밀번호를 변경해주세요.";
 				url = "findIdResult.do";
 				session.setAttribute("user_id", rDTO.getUser_id());
 			}

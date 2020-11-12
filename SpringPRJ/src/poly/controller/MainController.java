@@ -246,7 +246,7 @@ public class MainController {
         if(emailCheck!=null) res=1;
         
         log.info("result : " + res);
-        log.info("if 종료");
+        log.info("if 함수 종료");
         
         log.info("emailCheck 종료");
         return res;

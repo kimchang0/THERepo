@@ -40,7 +40,7 @@ public class MainController {
 
 	@RequestMapping(name = "The/TheLogin")
 	public String TheLogin(HttpSession session) {
-		log.info("TheLogin 시작");
+		log.info(this.getClass().getName() + "TheLogin 시작");
 		session.invalidate();
 		log.info("TheLogin 종료");
 		return "/The/TheLogin";

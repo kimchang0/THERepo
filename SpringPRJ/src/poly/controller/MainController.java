@@ -42,7 +42,7 @@ public class MainController {
 	public String TheLogin(HttpSession session) {
 		log.info(this.getClass().getName() + "TheLogin 시작");
 		session.invalidate();
-		log.info("TheLogin 종료");
+		log.info(this.getClass().getName() + "TheLogin 종료");
 		return "/The/TheLogin";
 	}
 

@@ -49,7 +49,7 @@ public class MainController {
 	@RequestMapping(value = "The/TheLoginProc")
 	public String TheLoginProc(HttpServletRequest request, Model model, HttpSession session) throws Exception {
 
-		log.info("/The/TheLoginProc 시작");
+		log.info(this.getClass().getName() + "/The/TheLoginProc 시작");
 		String id = nvl(request.getParameter("id"));
 		String pwd = nvl(EncryptUtil.enHashSHA256(request.getParameter("pwd")));
 

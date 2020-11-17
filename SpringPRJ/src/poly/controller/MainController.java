@@ -53,7 +53,7 @@ public class MainController {
 		String id = nvl(request.getParameter("id"));
 		String pwd = nvl(EncryptUtil.enHashSHA256(request.getParameter("pwd")));
 
-		log.info("id :" + id);
+		log.info(this.getClass().getName() + "id :" + id);
 		log.info("pwd :" + EncryptUtil.enHashSHA256(pwd));
 
 		UserDTO tDTO = new UserDTO();

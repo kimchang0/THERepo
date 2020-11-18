@@ -69,7 +69,7 @@ public class MainController {
 		if (tDTO == null) {
 			msg = "로그인 실패";
 		} else {
-			log.info("tDTO.User_id : " + tDTO.getUser_id());
+			log.info(this.getClass().getName() + "tDTO.User_id : " + tDTO.getUser_id());
 			log.info("tDTO.User_email : " + tDTO.getUser_email());
 			msg = "로그인 성공";
 			session.setAttribute("user_id", tDTO.getUser_id());

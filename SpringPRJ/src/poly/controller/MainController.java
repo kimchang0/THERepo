@@ -54,7 +54,7 @@ public class MainController {
 		String pwd = nvl(EncryptUtil.enHashSHA256(request.getParameter("pwd")));
 
 		log.info(this.getClass().getName() + "id :" + id);
-		log.info("pwd :" + EncryptUtil.enHashSHA256(pwd));
+		log.info(this.getClass().getName() + "pwd :" + EncryptUtil.enHashSHA256(pwd));
 
 		UserDTO tDTO = new UserDTO();
 
@@ -62,7 +62,7 @@ public class MainController {
 		tDTO.setUser_pwd(pwd);
 
 		tDTO = userService.getUserInfo(tDTO);
-		log.info("uDTO null? : " + (tDTO == null));
+		log.info(this.getClass().getName() + "uDTO null? : " + (tDTO == null));
 
 		String msg = "";
 		String url = "";

@@ -79,7 +79,7 @@ public class MainController {
 			if(res == 1) {
 				log.info(this.getClass().getName() + "로그인 확인메일 발송 성공");
 			} else {
-				log.info("로그인 메일확인 발송 실패");
+				log.info(this.getClass().getName() + "로그인 메일확인 발송 실패");
 			}
 		}
 

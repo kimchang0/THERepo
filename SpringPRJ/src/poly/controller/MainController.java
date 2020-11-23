@@ -88,7 +88,7 @@ public class MainController {
 		model.addAttribute("msg", msg);
 		model.addAttribute("url", url);
 
-		log.info("The/TheLoginProc 종료");
+		log.info(this.getClass().getName() + "The/TheLoginProc 종료");
 
 		return "/redirect";
 	}

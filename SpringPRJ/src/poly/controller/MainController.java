@@ -96,7 +96,7 @@ public class MainController {
 	@RequestMapping(value = "The/TheLogout")
 	public String TheLogout(HttpSession session, Model model) throws Exception {
 
-		log.info("/The/TheLogout 시작");
+		log.info(this.getClass().getName() + "/The/TheLogout 시작");
 
 		String msg = "";
 		String url = "";

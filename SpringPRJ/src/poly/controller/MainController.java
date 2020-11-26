@@ -135,7 +135,7 @@ public class MainController {
 	@RequestMapping(value = "The/TheSignUp")
 	public String TheSignUp() {
 
-		log.info("TheSignUp 시작");
+		log.info(this.getClass().getName() + "TheSignUp 시작");
 
 		log.info("TheSignUp 종료");
 

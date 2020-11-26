@@ -137,7 +137,7 @@ public class MainController {
 
 		log.info(this.getClass().getName() + "TheSignUp 시작");
 
-		log.info("TheSignUp 종료");
+		log.info(this.getClass().getName() + "TheSignUp 종료");
 
 		return "/The/TheSignup";
 	}

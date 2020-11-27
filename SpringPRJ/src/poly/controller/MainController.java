@@ -145,7 +145,7 @@ public class MainController {
 	@RequestMapping(value = "The/TheSignUpProc", method = RequestMethod.POST)
 	public String TheSignUpProc(HttpServletRequest request, ModelMap model, HttpSession session) throws Exception {
 
-		log.info("/The/TheSignUpProc 시작");
+		log.info(this.getClass().getName() + "/The/TheSignUpProc 시작");
 		
 		log.info("request.getParameter 시작");
 		

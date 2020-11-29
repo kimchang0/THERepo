@@ -147,7 +147,7 @@ public class MainController {
 
 		log.info(this.getClass().getName() + "/The/TheSignUpProc 시작");
 		
-		log.info("request.getParameter 시작");
+		log.info(this.getClass().getName() + "request.getParameter 시작");
 		
 		String user_id = request.getParameter("id");
 		String user_pwd = nvl(request.getParameter("pwd"));

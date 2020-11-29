@@ -155,8 +155,7 @@ public class MainController {
 		String user_age = request.getParameter("age");
 		String[] user_interest = request.getParameterValues("interest");
 		
-		
-		log.info("request.getParameter 종료");
+		log.info(this.getClass().getName() + "request.getParameter 종료");
 		
 		log.info("user_id : " + user_id);
 		log.info("user_pwd : " + user_pwd);

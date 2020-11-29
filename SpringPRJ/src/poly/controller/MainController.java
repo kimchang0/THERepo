@@ -157,7 +157,7 @@ public class MainController {
 		
 		log.info(this.getClass().getName() + "request.getParameter 종료");
 		
-		log.info("user_id : " + user_id);
+		log.info(this.getClass().getName() + "user_id : " + user_id);
 		log.info("user_pwd : " + user_pwd);
 		log.info("user_gender : " + user_gender);
 		

@@ -159,7 +159,7 @@ public class MainController {
 		
 		log.info(this.getClass().getName() + "user_id : " + user_id);
 		log.info(this.getClass().getName() + "user_pwd : " + user_pwd);
-		log.info("user_gender : " + user_gender);
+		log.info(this.getClass().getName() + "user_gender : " + user_gender);
 		
 		// 매우중요!! - 콤마로 조인
 		String interests = String.join(",", user_interest);

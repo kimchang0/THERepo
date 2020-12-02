@@ -163,7 +163,7 @@ public class MainController {
 		
 		// 매우중요!! - 콤마로 조인
 		String interests = String.join(",", user_interest);
-		log.info("interest : " + interests);
+		log.info(this.getClass().getName() + "interest : " + interests);
 		
 		String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
 		

@@ -168,7 +168,7 @@ public class MainController {
 		String HashEnc = EncryptUtil.enHashSHA256(user_pwd);
 		
 		UserDTO tDTO = new UserDTO();
-		log.info("tDTO.set 시작");
+		log.info(this.getClass().getName() + "tDTO.set 시작");
 		tDTO.setUser_id(user_id);
 		tDTO.setUser_pwd(HashEnc);
 		tDTO.setUser_gender(user_gender);

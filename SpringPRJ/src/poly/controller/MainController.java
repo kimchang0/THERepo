@@ -176,7 +176,7 @@ public class MainController {
 		tDTO.setUser_interest(interests);
 		
 		log.info(this.getClass().getName() + "tDTO.set 종료");
-		log.info("tDTO" + tDTO);
+		log.info(this.getClass().getName() + "tDTO" + tDTO);
 		
 		session.setAttribute("user_id", tDTO.getUser_id());
 		log.info("sessionSet user_id : " + session.getAttribute("user_id"));

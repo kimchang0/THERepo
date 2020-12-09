@@ -183,7 +183,7 @@ public class MainController {
 		
 		log.info(this.getClass().getName() + "TheService.TheSignUp 시작");
 		int res = userService.UserSignUp(tDTO);
-		log.info("TheService.TheSignUp 종료");
+		log.info(this.getClass().getName() + "TheService.TheSignUp 종료");
 		log.info("res : " + res);
 
 		String msg;

@@ -184,7 +184,7 @@ public class MainController {
 		log.info(this.getClass().getName() + "TheService.TheSignUp 시작");
 		int res = userService.UserSignUp(tDTO);
 		log.info(this.getClass().getName() + "TheService.TheSignUp 종료");
-		log.info("res : " + res);
+		log.info(this.getClass().getName() + "res : " + res);
 
 		String msg;
 		String url = "/The/TheEmailCertify.do";

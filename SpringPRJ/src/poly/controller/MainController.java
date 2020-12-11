@@ -195,7 +195,7 @@ public class MainController {
 			msg = "회원가입에 실패했습니다.";
 		}
 
-		log.info("model.addAttribute 시작");
+		log.info(this.getClass().getName() + "model.addAttribute 시작");
 		model.addAttribute("msg", msg);
 		model.addAttribute("url", url);
 		log.info("model.addAttribute 종료");

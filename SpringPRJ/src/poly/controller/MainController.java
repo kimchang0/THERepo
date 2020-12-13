@@ -200,7 +200,7 @@ public class MainController {
 		model.addAttribute("url", url);
 		log.info(this.getClass().getName() + "model.addAttribute 종료");
 		
-		log.info("TheSignUpProc 종료");
+		log.info(this.getClass().getName() + "TheSignUpProc 종료");
 
 		return "/redirect";
 	}

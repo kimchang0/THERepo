@@ -208,7 +208,7 @@ public class MainController {
 	@ResponseBody
     @RequestMapping(value="/The/idCheck", method = RequestMethod.POST)
     public int idCheck(HttpServletRequest request) throws Exception {
-        log.info("idCheck 시작");
+        log.info(this.getClass().getName() + "idCheck 시작");
         
         String userId = request.getParameter("userId");
         

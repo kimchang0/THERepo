@@ -212,7 +212,7 @@ public class MainController {
         
         String userId = request.getParameter("userId");
         
-        log.info("TheService.idCheck 시작");
+        log.info(this.getClass().getName() + "TheService.idCheck 시작");
         UserDTO idCheck = userService.idCheck(userId);
         log.info("TheService.idCheck 종료");
         

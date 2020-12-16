@@ -214,7 +214,7 @@ public class MainController {
         
         log.info(this.getClass().getName() + "TheService.idCheck 시작");
         UserDTO idCheck = userService.idCheck(userId);
-        log.info("TheService.idCheck 종료");
+        log.info(this.getClass().getName() + "TheService.idCheck 종료");
         
         int result=0;
         

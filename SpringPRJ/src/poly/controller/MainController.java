@@ -218,7 +218,7 @@ public class MainController {
         
         int result=0;
         
-        log.info("if 시작");
+        log.info(this.getClass().getName() + "if 시작");
         if(idCheck!=null) { 
         	result=1;
         }

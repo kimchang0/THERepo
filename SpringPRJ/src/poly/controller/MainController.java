@@ -222,7 +222,7 @@ public class MainController {
         if(idCheck!=null) { 
         	result=1;
         }
-        log.info("result : " + result);
+        log.info(this.getClass().getName() + "result : " + result);
         log.info("if 종료");
         
         log.info("idCheck 종료");

@@ -223,7 +223,7 @@ public class MainController {
         	result=1;
         }
         log.info(this.getClass().getName() + "result : " + result);
-        log.info("if 종료");
+        log.info(this.getClass().getName() + "if 종료");
         
         log.info("idCheck 종료");
         return result;

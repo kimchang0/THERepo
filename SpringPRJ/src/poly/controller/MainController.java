@@ -237,7 +237,7 @@ public class MainController {
 		String userEmail = EncryptUtil.encAES128CBC(request.getParameter("userEmail"));
 		log.info(this.getClass().getName() + "TheService.emailCheck 시작");
         UserDTO emailCheck = userService.emailCheck(userEmail);
-        log.info("TheService.emailCheck 종료");
+        log.info(this.getClass().getName() + "TheService.emailCheck 종료");
         
         int res = 0;
         

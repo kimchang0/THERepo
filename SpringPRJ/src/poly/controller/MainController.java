@@ -244,7 +244,7 @@ public class MainController {
         log.info(this.getClass().getName() + "if 함수 시작");
         if(emailCheck!=null) res=1;
         
-        log.info("result : " + res);
+        log.info(this.getClass().getName() + "result : " + res);
         log.info("if 함수 종료");
         
         log.info("emailCheck 종료");

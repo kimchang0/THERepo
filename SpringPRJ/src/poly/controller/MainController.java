@@ -266,7 +266,7 @@ public class MainController {
 
 			log.info(this.getClass().getName() + "/The/TheEmailCertify 시작");
 
-			log.info("/The/TheEmailCertify 종료");
+			log.info(this.getClass().getName() + "/The/TheEmailCertify 종료");
 
 			return "/The/TheEmailCertify";
 		}

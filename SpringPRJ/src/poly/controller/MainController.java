@@ -264,7 +264,7 @@ public class MainController {
 	 	@RequestMapping(value = "/The/TheEmailCertify")
 		public String EmailCertify() {
 
-			log.info("/The/TheEmailCertify 시작");
+			log.info(this.getClass().getName() + "/The/TheEmailCertify 시작");
 
 			log.info("/The/TheEmailCertify 종료");
 

@@ -274,7 +274,7 @@ public class MainController {
 	 	@ResponseBody
 		@RequestMapping(value="/The/TheEmailCertifyProc", method = RequestMethod.POST)
 		public int TheEmailCertify(HttpServletRequest request, HttpSession session) throws Exception{
-			log.info("/The/TheEmailCertify 시작");
+			log.info(this.getClass().getName() + "/The/TheEmailCertify 시작");
 	        
 	    	int result = 0;
 	    	String email = EncryptUtil.encAES128CBC(request.getParameter("email"));

@@ -278,7 +278,7 @@ public class MainController {
 	        
 	    	int result = 0;
 	    	String email = EncryptUtil.encAES128CBC(request.getParameter("email"));
-	    	log.info("email : " + EncryptUtil.decAES128CBC(email));
+	    	log.info(this.getClass().getName() + "email : " + EncryptUtil.decAES128CBC(email));
 	    	String authNum = "";
 	    	
 	    	authNum = RandomNum();
